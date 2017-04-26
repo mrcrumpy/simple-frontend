@@ -22,7 +22,7 @@ module.exports = {
             path.resolve(__dirname, 'node_modules')
         ],
         modulesDirectories: ['node_modules'],
-        extensions: ['', '.js', '.css', '.html']
+        extensions: ['', '.js', '.scss', '.html']
     },
     devtool: 'inline-source-map',
     module: {
@@ -40,11 +40,13 @@ module.exports = {
                 test: /\.html$/,
                 loader: 'raw',
                 exclude: /node_modules/
+            },{
+                test: /\.scss$/,
+                loader: "style-loader!css-loader!postcss-loader!sass-loader" // creates style nodes from JS strings
+            },{
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader'
             },
-            {
-                test:   /\.css$/,
-                loader: "style-loader!css-loader!postcss-loader"
-            }
         ]
     },
     postcss: function () {
