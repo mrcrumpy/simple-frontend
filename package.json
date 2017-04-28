@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "webpack-dev-server --content-base build --config webpack.conf.js",
-    "watch-plain": "webpack --watch --config webpack.conf.js"
+    "watch": "webpack-dev-server --content-base build",
+    "watch-plain": "webpack --watch"
   },
   "author": "Way Spurr-Chen <wayspurrchen@gmail.com> (http://www.wayspurrchen.com/)",
   "license": "MIT",
